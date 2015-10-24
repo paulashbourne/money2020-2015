@@ -14,7 +14,7 @@ var io     = require('socket.io')(server);
 app.constants = constants;
 
 // Conntext to mongo
-mongoose.connect('mongodb://paulashbourne.com/calhacks');
+mongoose.connect('mongodb://paulashbourne.com/money2020');
 app.use(express.static('app/public'));
 
 // Set up routes
