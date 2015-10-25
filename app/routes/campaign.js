@@ -1,5 +1,5 @@
 var Campaign = require('../model/campaign');
-var _    = require('underscore');
+var _        = require('underscore');
 
 module.exports = function(router) {
   router.route('/campaigns')
