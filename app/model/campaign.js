@@ -9,6 +9,22 @@ var CampaignSchema = new mongoose.Schema({
   description : {
     type     : String,
     required : true
+  },
+  daily_budget : {
+    type     : Number,
+    required : true
+  },
+  fb_page_id   : {
+    type     : String,
+    required : true
+  },
+  target_address : {
+    type     : String,
+    required : true
+  },
+  target_radius : {
+    type     : Number,
+    required : true
   }
 });
 
