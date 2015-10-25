@@ -81,7 +81,10 @@ module.exports = function(router) {
             });
           });
         });
-        res.json(orders_by_day);
+        res.json({
+          x : _.keys(orders_by_day),
+          y : _.values(orders_by_day)
+        });
       });
     })
 };
