@@ -25,7 +25,7 @@ module.exports = function(router) {
               var new_items = _.filter(result.body.elements, function(item) {
                 return item.modifiedTime > moment().hour(-1).valueOf()
               })
-              callback(null, new_items)
+              callback(null, {type: 'new_items', items: new_items})
             })
           }
         }, function(err, results) {

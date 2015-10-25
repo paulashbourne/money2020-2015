@@ -41,6 +41,6 @@ exports.scrapeEvent = function(event, next) {
       }
     })
     console.log({mention: max_mention, hashtag: max_hashtag})
-    next(null, {title: event, mention: max_mention, hashtag: max_hashtag})
+    next(null, {type: "event", title: event, mention: max_mention, hashtag: max_hashtag})
   })
 }
