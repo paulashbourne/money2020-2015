@@ -2,6 +2,10 @@ var mongoose  = require('mongoose')
 var BaseModel = require('./base')
 
 var CampaignSchema = new mongoose.Schema({
+  item_id : {
+    type     : String,
+    required : false
+  },
   name : {
     type     : String,
     required : true
