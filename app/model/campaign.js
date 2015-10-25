@@ -34,7 +34,7 @@ var CampaignSchema = new mongoose.Schema({
     type     : Date,
     required : true
   },
-  finish_date : {
+  end_date : {
     type     : Date,
     required : true
   }

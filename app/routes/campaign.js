@@ -43,9 +43,12 @@ module.exports = function(router) {
     .put(function(req, res) {
       var params = req.body;
       Campaign.findById(req.params.id, function(err, campaign) {
-        if (err)
+        if (err) {
           res.send(err);
-        _.extend(campaign, params);
+        }
+      _.extend(campaign, params);
+      campaign.start_date = moment().toDate();
+      campaign.end_date   = moment().add(7, 'days').toDate();
         campaign.save(function(err) {
           if (err)
             res.send(err);
