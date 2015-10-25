@@ -12,9 +12,9 @@ var call = function(endpoint, method, data, next) {
 
   if (method === "POST") {
     r.post(apiURL + endpoint).send(data).set('Authorization', 'Bearer a206ae20-b1fb-6ba4-1d92-8403105d2f91').end(next)
-  }
-  else
+  } else {
     r.get(apiURL + endpoint).set('Authorization', 'Bearer a206ae20-b1fb-6ba4-1d92-8403105d2f91').end(next)
+  }
 };
 
 module.exports = {

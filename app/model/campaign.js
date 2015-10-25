@@ -29,6 +29,14 @@ var CampaignSchema = new mongoose.Schema({
   target_radius : {
     type     : Number,
     required : true
+  },
+  start_date : {
+    type     : Date,
+    required : true
+  },
+  finish_date : {
+    type     : Date,
+    required : true
   }
 });
 
