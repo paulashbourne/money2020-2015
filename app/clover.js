@@ -26,6 +26,6 @@ var call = function(endpoint, method, data, callback) {
   });
 };
 
-exports = {
+module.exports = {
   call : call
 };
