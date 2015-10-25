@@ -70,20 +70,23 @@ module.exports = function(router) {
             m.add(1, 'days')) {
           orders_by_day[m.format("YYYY-MM-DD")] = 0;
         }
-        clover.call('orders?expand=lineItems', 'GET', {},
-        function(err, resp) {
-          _.each(resp.body.elements, function(order) {
-            _.each(order.lineItems, function(item) {
-              if (item.id == campaign.item_id) {
-                var time = moment(order.created_time);
-                orders_by_day[time.format("YYYY-MM-DD")] += 1;
-              }
+        clover.call('items/'+campaign.item_id, 'GET', {}, function(err, itemResp) {
+          clover.call('orders?expand=lineItems', 'GET', {},
+          function(err, resp) {
+            _.each(resp.body.elements, function(order) {
+              _.each(order.lineItems, function(item) {
+                if (item.id == campaign.item_id) {
+                  var time = moment(order.created_time);
+                  orders_by_day[time.format("YYYY-MM-DD")] += 1;
+                }
+              });
+            });
+            res.json({
+              x        : _.keys(orders_by_day),
+              y        : _.values(orders_by_day),
+              itemName : itemResp.body.name
             });
           });
-        });
-        res.json({
-          x : _.keys(orders_by_day),
-          y : _.values(orders_by_day)
         });
       });
     })
