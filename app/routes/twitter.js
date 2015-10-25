@@ -12,7 +12,7 @@ module.exports = function(router) {
             twitter.scrapeEvent('NFL', callback)
           },
           getCancer: function(callback) {
-            twitter.scrapeEvent('Breast Cancer', callback)
+            twitter.scrapeEvent('Breast Cancer Awareness', callback)
           },
           getMoney : function(callback) {
             twitter.scrapeEvent('Money 20/20', callback)
