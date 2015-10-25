@@ -16,6 +16,7 @@ router.use(bodyParser.json());
 // Begin endpoints
 require('./user')(router);
 require('./campaign')(router);
+require('./twitter')(router);
 
 module.exports = function (app, io) {
   app.use('/api', router);
